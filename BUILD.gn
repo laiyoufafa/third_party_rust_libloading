@@ -1,0 +1,29 @@
+# Copyright (c) 2023 Huawei Device Co., Ltd.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import("//build/ohos.gni")
+
+ohos_cargo_crate("lib") {
+    crate_name = "libloading"
+    crate_type = "rlib"
+    crate_root = "src/lib.rs"
+    output_name = "liblibloading"
+
+    sources = ["src/lib.rs"]
+    edition = "2015"
+    cargo_pkg_version = "0.7.4"
+    cargo_pkg_authors = "Simonas Kazlauskas <libloading@kazlauskas.me>"
+    cargo_pkg_name = "libloading"
+    cargo_pkg_description = "Bindings around the platform's dynamic library loading primitives with greatly improved memory safety."
+    deps = ["//third_party/rust/crates/cfg-if:lib"]
+}
